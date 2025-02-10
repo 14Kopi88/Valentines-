@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Question</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="question">Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button id="yes" onclick="growYes()">Yes ❤️</button>
+        <button id="no" onclick="bounceNo()">No 💔</button>
+    </div>
+    <script>
+        function growYes() {
+            let yesBtn = document.getElementById("yes");
+            let size = 20;
+            let interval = setInterval(() => {
+                size += 5;
+                yesBtn.style.fontSize = size + "px";
+                if (size >= 50) clearInterval(interval);
+            }, 200);
+        }
+
+        function bounceNo() {
+            let noBtn = document.getElementById("no");
+            let position = 0;
+            let direction = 1;
+            let interval = setInterval(() => {
+                position += direction * 10;
+                noBtn.style.transform = `translateY(${position}px)`;
+                if (position >= 30 || position <= -30) direction *= -1;
+            }, 100);
+            setTimeout(() => clearInterval(interval), 2000);
+        }
+    </script>
+</body>
+</html>
