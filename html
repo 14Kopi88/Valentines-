@@ -1,68 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Question</title>
-    <style>
-        body {
-            text-align: center;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .question {
-            font-size: 24px;
-            margin-top: 50px;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        #yes {
-            background-color: green;
-            color: white;
-        }
-        #no {
-            background-color: red;
-            color: white;
-            position: relative;
-        }
-    </style>
-</head>
-<body>
-    <h1 class="question">Will you be my Valentine?</h1>
-    <div class="buttons">
-        <button id="yes" onclick="growYes()">Yes ❤️</button>
-        <button id="no" onclick="bounceNo()">No 💔</button>
-    </div>
-    <script>
-        function growYes() {
-            let yesBtn = document.getElementById("yes");
-            let size = 20;
-            let interval = setInterval(() => {
-                size += 5;
-                yesBtn.style.fontSize = size + "px";
-                if (size >= 50) clearInterval(interval);
-            }, 200);
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        function bounceNo() {
-            let noBtn = document.getElementById("no");
-            let position = 0;
-            let direction = 1;
-            let interval = setInterval(() => {
-                position += direction * 10;
-                noBtn.style.transform = `translateY(${position}px)`;
-                if (position >= 30 || position <= -30) direction *= -1;
-            }, 100);
-            setTimeout(() => clearInterval(interval), 2000);
-        }
-    </script>
-</body>
-</html>
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.yes {
+  background-color: #ff6347;
+}
+
+.no {
+  background-color: #ff4500;
+}
+
+button:active {
+  transform: scale(1.05);
+}
+
+.response {
+  margin-top: 20px;
+  font-size: 1.8em;
+  color: #ffd700;
+}
+
+.heart-gif {
+  width: 150px;
+  margin-top: 30px;
+  animation: heart-beat 1.5s infinite;
+}
+
+@keyframes heart-beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.no-bounce {
+  animation: bounce 0.5s infinite;
+}
