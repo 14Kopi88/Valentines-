@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffebee;
+    background-color: #ffcccb; /* Rózsaszín háttér */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,28 @@ body {
 h1 {
     color: #e91e63;
     font-size: 2.5em;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.heart-image {
+    width: 100px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .buttons {
