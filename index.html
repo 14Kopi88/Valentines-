@@ -3,56 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Will You Be My Valentine debil?</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Will you be my Valentine?</h1>
-        <div class="images">
-            <img src="https://github.com/username/repository-name/blob/main/images/yourimage.jpg?raw=true" alt="Heart" class="image">
-            <<img src="https://github.com/username/repository-name/blob/main/images/yourimage.jpg?raw=true" alt="Rose" class="image">
-<img src="https://github.com/username/repository-name/blob/main/images/yourimage.jpg?raw=true" alt="Cupcake" class="image">
-
-        </div>
+        <h1>Will You Be My Valentine?</h1>
         <div class="buttons">
-            <button id="yesButton" onclick="answer('yes')">Yes</button>
-            <button id="noButton" onclick="answer('no')">No</button>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
         </div>
-        <div id="response"></div>
-        <div id="heart" class="heart" style="display: none;">
-            <h2>Thank you for everything, I love you ❤️</h2>
+        <div id="heartMessage" class="hidden">
+            <div class="heart">❤️</div>
+            <p>Thank you for everything baby, I love you so much!!!!</p>
         </div>
     </div>
-
-    <script>
-        let noButton = document.getElementById("noButton");
-        let yesButton = document.getElementById("yesButton");
-        let heart = document.getElementById("heart");
-
-        function answer(response) {
-            if (response === 'yes') {
-                // Hide the entire page and show the heart
-                document.querySelector(".container").style.display = "none";
-                heart.style.display = "block";
-            } else {
-                // Make "No" button move around the screen
-                moveNoButton();
-            }
-        }
-
-        function moveNoButton() {
-            let button = noButton;
-            let newX = Math.random() * (window.innerWidth - button.offsetWidth);
-            let newY = Math.random() * (window.innerHeight - button.offsetHeight);
-
-            button.style.position = "absolute";
-            button.style.left = newX + "px";
-            button.style.top = newY + "px";
-
-            // Keep moving the button until the user clicks Yes
-            setTimeout(moveNoButton, 1000);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
