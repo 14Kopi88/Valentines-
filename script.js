@@ -1,38 +1,25 @@
-function handleAnswer(answer) {
-  const responseDiv = document.getElementById('response');
-  const noButton = document.querySelector('.no');
-  const catImage = document.getElementById('catImage');
-  const fireworks = document.getElementById('fireworks');
-  
-  if (answer === 'yes') {
-    responseDiv.innerHTML = 'Yay! I’m so happy with you! 💖';
-    responseDiv.style.color = '#ff69b4';
-    playHeartAnimation();
-    displayFireworks(fireworks);
-    catImage.style.display = 'none'; // Elrejtjük a cicás képet
-  } else if (answer === 'no') {
-    responseDiv.innerHTML = 'Oh noooo, pierdole sie! 💔 Maybe next time?';
-    responseDiv.style.color = '#ff0000';
-    makeNoBounce(noButton);
-    displayCatImage(catImage); // Megjelenítjük a cicás képet
-    fireworks.style.display = 'none'; // Elrejtjük a tűzijátékot
-  }
-}
+document.getElementById('yesButton').addEventListener('click', function() {
+    document.querySelector('.buttons').classList.add('hidden');
+    document.getElementById('heartMessage').classList.remove('hidden');
+});
 
-function playHeartAnimation() {
-  const heartGif = document.querySelector('.heart-gif');
-  heartGif.style.animation = 'heart-beat 1.5s infinite';
-}
+document.getElementById('noButton').addEventListener('click', function() {
+    moveButton();
+});
 
-function makeNoBounce(button) {
-  button.classList.add('no-bounce');
-}
+function moveButton() {
+    const noButton = document.getElementById('noButton');
+    const container = document.querySelector('.container');
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = noButton.getBoundingClientRect();
 
-function displayFireworks(fireworks) {
-  fireworks.style.display = 'block'; // Megjelenítjük a tűzijátékot
-}
+    const maxX = containerRect.width - buttonRect.width;
+    const maxY = containerRect.height - buttonRect.height;
 
-function displayCatImage(catImage) {
-  catImage.style.display = 'block'; // Megjelenítjük a cicás képet
-  catImage.src = 'https://media.giphy.com/media/11s7Ke7jcNxCH6/giphy.gif'; // Macskás szív GIF
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
 }
