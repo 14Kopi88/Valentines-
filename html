@@ -1,113 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will you be my Valentine?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Will you be my Valentine? 💘</h1>
+    <div class="question">
+      <p>Click Yes or No!</p>
+      <div class="buttons">
+        <button class="yes" onclick="handleAnswer('yes')">Yes 💖</button>
+        <button class="no" onclick="handleAnswer('no')">No 💔</button>
+      </div>
+    </div>
+    <div id="response" class="response"></div>
+    <div class="hearts">
+      <img src="https://media.giphy.com/media/3ohs7Zm2mxybtvl3lC/giphy.gif" alt="heart gif" class="heart-gif">
+    </div>
+  </div>
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.container {
-  text-align: center;
-  color: white;
-  padding: 30px;
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: relative;
-  z-index: 1;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.question p {
-  font-size: 1.5em;
-  margin: 15px 0;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-button {
-  padding: 15px 30px;
-  font-size: 1.3em;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-}
-
-.yes {
-  background-color: #ff6347;
-}
-
-.no {
-  background-color: #ff4500;
-}
-
-button:active {
-  transform: scale(1.05);
-}
-
-.response {
-  margin-top: 20px;
-  font-size: 1.8em;
-  color: #ffd700;
-}
-
-.heart-gif {
-  width: 150px;
-  margin-top: 30px;
-  animation: heart-beat 1.5s infinite;
-}
-
-@keyframes heart-beat {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.no-bounce {
-  animation: bounce 0.5s infinite;
-}
+  <script src="script.js"></script>
+</body>
+</html>
