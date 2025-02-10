@@ -1,5 +1,6 @@
 document.getElementById('yesButton').addEventListener('click', function() {
     document.querySelector('.buttons').classList.add('hidden');
+    document.querySelector('.images').classList.add('hidden');
     document.getElementById('heartMessage').classList.remove('hidden');
 });
 
