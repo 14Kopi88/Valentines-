@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background-color: #ff99cc; /* Rózsaszín háttér */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,4 +110,40 @@ button:active {
 
 .no-bounce {
   animation: bounce 0.5s infinite;
+}
+
+/* Tűzijáték effekt */
+@keyframes fireworks {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fireworks {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background: url('https://media.giphy.com/media/xTiTnGgADgQ67jJbXy/giphy.gif') no-repeat center center;
+  background-size: contain;
+  animation: fireworks 1.5s ease-out;
+}
+
+.cat-image {
+  display: none;
+  margin-top: 20px;
+  width: 200px;
+  border-radius: 10px;
 }
