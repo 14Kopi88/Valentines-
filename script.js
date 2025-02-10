@@ -5,13 +5,13 @@ function handleAnswer(answer) {
   const fireworks = document.getElementById('fireworks');
   
   if (answer === 'yes') {
-    responseDiv.innerHTML = 'Yay! I’m so happy! 💖';
+    responseDiv.innerHTML = 'Yay! I’m so happy with you! 💖';
     responseDiv.style.color = '#ff69b4';
     playHeartAnimation();
     displayFireworks(fireworks);
     catImage.style.display = 'none'; // Elrejtjük a cicás képet
   } else if (answer === 'no') {
-    responseDiv.innerHTML = 'Oh no! 💔 Maybe next time?';
+    responseDiv.innerHTML = 'Oh noooo, pierdole sie! 💔 Maybe next time?';
     responseDiv.style.color = '#ff0000';
     makeNoBounce(noButton);
     displayCatImage(catImage); // Megjelenítjük a cicás képet
